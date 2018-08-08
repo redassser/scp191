@@ -32,7 +32,7 @@ if (command === "ping") {
   if (command === "set" && args[0] != "" && message.member.permissions.has('ADMINISTRATOR')) {
     fs.writeFile('./ip.json', `${args[0]}`, (err) => {
   if (err) throw err;
-  console.log('The file has been saved!');
+  console.log('The file has been saved! ');
 });
   }
   if (command === "set1" && args[0] != "" && message.member.permissions.has('ADMINISTRATOR')) {
