@@ -53,214 +53,50 @@ if (command === "ping") {
   console.log('The port3 has been saved!');
 });
   }
-  if (command === "s") {
-      console.log(ip);
+  if (command === "ss"){
+  request('https://api.scpslgame.com/lobbylist.php?format=json', function(err, resp, html) {
+      if (!err){
+        var json = JSON.parse(html);
+        if ("error" in json) {
+          console.log("Someone help me!");
+        } else {
+          
+          let ser1 = json.find(o => o.ip === "scpmemers.xyz" && o.port === '7777')
+          if(!ser1) {var title1 = ""; var player1 = ser1.players} 
+          else {var title1 = "[OFFLINE]"; var player1 = "N/A"}
+           
+          let ser2 = json.find(o => o.ip === "scpmemers.xyz" && o.port === '7778')
+          if(!ser2) {var title2 = ""; var player2 = ser2.players} 
+          else {var title2 = "[OFFLINE]"; var player2 = "N/A"}
+           
+          let ser3 = json.find(o => o.ip === "scpmemers.xyz" && o.port === '7779')
+          if(!ser3) {var title3 = ""; var player3 = ser3.players} 
+          else {var title3 = "[OFFLINE]"; var player3 = "N/A"}
+		
+	  let serverstatus1 = new Discord.RichEmbed()
+	    .setTitle("Shiba community #1 "+title1)
+	    .setAuthor("SCP Secret Laboratory","http://scp-sl.wdfiles.com/local--files/nav:side/scp-sl-logo.png")
+	    .addField("IP:","scpmemers.xyz")
+	    .addField("PORT:","7777")
+	    .addField("PLAYERS:",player1)
+          message.channel.send(serverstatus)
+	  let serverstatus1 = new Discord.RichEmbed()
+	    .setTitle("Shiba community #2 "+title2)
+	    .setAuthor("SCP Secret Laboratory","http://scp-sl.wdfiles.com/local--files/nav:side/scp-sl-logo.png")
+	    .addField("IP:","scpmemers.xyz")
+	    .addField("PORT:","7778")
+	    .addField("PLAYERS:",player2)
+          message.channel.send(serverstatus)
+	  let serverstatus1 = new Discord.RichEmbed()
+	    .setTitle("Shiba community #3 "+title3)
+	    .setAuthor("SCP Secret Laboratory","http://scp-sl.wdfiles.com/local--files/nav:side/scp-sl-logo.png")
+	    .addField("IP:","scpmemers.xyz")
+	    .addField("PORT:","7779")
+	    .addField("PLAYERS:",player3)
+          message.channel.send(serverstatus)
+        } 
+      }  
+    });
   }
-   if (command === "ss") {
-
-	   	     request(`https://kigen.co/scpsl/getinfo.php?ip=${ip}&port=${port1}`, function(err, resp, html) {
-        if (!err){
-          var $ = cheerio.load(html); 
-          
-            if (html === '{"error":"Server not found"}') {
-				 message.channel.send({"embed": {
-    "color": 9245716,
-    "title": "JackInTheBoxRunaway Community #1 [OFFLINE]",
-     "author": {
-      "name": "SCP Secret Laboratory",
-      "icon_url": "http://scp-sl.wdfiles.com/local--files/nav:side/scp-sl-logo.png"
-     },
-        fields: [{
-          name: "IP:",
-          value: `${ip}`,
-          inline: true
-        },
-        {
-          name: "PORT:",
-          value: `${port1}`,
-          inline: true
-        },
-        {
-          name: "PLAYERS:",
-          value: `N/A`,
-          inline: true
-        }
-          ],
-      }
-     });  
-   }
-   else {
-	   var json = JSON.parse(html);
-     
-     if ("error" in json) {
-     console.log("wtf0");
-     } else {
-          var playerCount = json.players;
-      message.channel.send({"embed": {
-    "color": 3498293,
-    "title": "JackInTheBoxRunaway Community #1",
-     "author": {
-      "name": "SCP Secret Laboratory",
-      "icon_url": "http://scp-sl.wdfiles.com/local--files/nav:side/scp-sl-logo.png"
-     },
-        fields: [{
-          name: "IP:",
-          value: `${ip}`,
-          inline: true
-        },
-        {
-          name: "PORT:",
-          value: `${port1}`,
-          inline: true
-        },
-        {
-          name: "PLAYERS:",
-          value: `${playerCount}`,
-          inline: true
-        }
-          ],
-      }
-     });       
-     }
-   }
-		}
-		 });
-		 	     request(`https://kigen.co/scpsl/getinfo.php?ip=${ip}&port=${port2}`, function(err, resp, html) {
-        if (!err){
-          var $ = cheerio.load(html); 
-          
-            if (html === '{"error":"Server not found"}') {
-				 message.channel.send({"embed": {
-    "color": 9245716,
-    "title": "JackInTheBoxRunaway Community #2 [OFFLINE]",
-     "author": {
-      "name": "SCP Secret Laboratory",
-      "icon_url": "http://scp-sl.wdfiles.com/local--files/nav:side/scp-sl-logo.png"
-     },
-        fields: [{
-          name: "IP:",
-          value: `${ip}`,
-          inline: true
-        },
-        {
-          name: "PORT:",
-          value: `${port2}`,
-          inline: true
-        },
-        {
-          name: "PLAYERS:",
-          value: `N/A`,
-          inline: true
-        }
-          ],
-      }
-     });  
-   }
-   else {
-	   var json = JSON.parse(html);
-     
-     if ("error" in json) {
-     console.log("wtf0");
-     } else {
-          var playerCount = json.players;
-           message.channel.send({"embed": {
-    "color": 3498293,
-    "title": "JackInTheBoxRunaway Community #2",
-     "author": {
-      "name": "SCP Secret Laboratory",
-      "icon_url": "http://scp-sl.wdfiles.com/local--files/nav:side/scp-sl-logo.png"
-     },
-        fields: [{
-          name: "IP:",
-          value: `${ip}`,
-          inline: true
-        },
-        {
-          name: "PORT:",
-          value: `${port2}`,
-          inline: true
-        },
-        {
-          name: "PLAYERS:",
-          value: `${playerCount}`,
-          inline: true
-        }
-          ],
-      }
-     });       
-     }
-   }
-		}
-		 });
-		 	     request(`https://kigen.co/scpsl/getinfo.php?ip=${ip}&port=${port3}`, function(err, resp, html) {
-        if (!err){
-          var $ = cheerio.load(html); 
-          
-            if (html === '{"error":"Server not found"}') {
-				 message.channel.send({"embed": {
-    "color": 9245716,
-     timestamp: new Date(),
-    "title": "JackInTheBoxRunaway Community #3 [OFFLINE]",
-     "author": {
-      "name": "SCP Secret Laboratory",
-      "icon_url": "http://scp-sl.wdfiles.com/local--files/nav:side/scp-sl-logo.png"
-     },
-        fields: [{
-          name: "IP:",
-          value: `${ip}`,
-          inline: true
-        },
-        {
-          name: "PORT:",
-          value: `${port3}`,
-          inline: true
-        },
-        {
-          name: "PLAYERS:",
-          value: `N/A`,
-          inline: true
-        }
-          ],
-      }
-     });  
-   }
-   else {
-	   var json = JSON.parse(html);
-     
-     if ("error" in json) {
-     console.log("wtf0");
-     } else {
-          var playerCount = json.players;
-            message.channel.send({"embed": {
-    "color": 3498293,
-    timestamp: new Date(),
-    "title": "JackInTheBoxRunaway Community #3",
-     "author": {
-      "name": "SCP Secret Laboratory",
-      "icon_url": "http://scp-sl.wdfiles.com/local--files/nav:side/scp-sl-logo.png"
-     },
-        fields: [{
-          name: "IP:",
-          value: `${ip}`,
-          inline: true
-        },
-        {
-          name: "PORT:",
-          value: `${port3}`,
-          inline: true
-        },
-        {
-          name: "PLAYERS:",
-          value: `${playerCount}`,
-          inline: true
-        }
-          ],
-      }
-     });       
-     }
-   }
-		}
-		 });
-   }
 });
 client.login(process.env.BOT_TOKEN);
