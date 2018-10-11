@@ -62,16 +62,16 @@ if (command === "ping") {
         } else {
           
           let ser1 = json.find(o => o.ip === "scpmemers.xyz" && o.port === '7777')
-          if(!ser1) {var title1 = ""; var player1 = ser1.players} 
-          else {var title1 = "[OFFLINE]"; var player1 = "N/A"}
+          if(!ser1) {var title1 = "[OFFLINE]"; var player1 = "N/A"} 
+          else {var title1 = ""; var player1 = ser1.players}
            
           let ser2 = json.find(o => o.ip === "scpmemers.xyz" && o.port === '7778')
-          if(!ser2) {var title2 = ""; var player2 = ser2.players} 
-          else {var title2 = "[OFFLINE]"; var player2 = "N/A"}
+          if(!ser2) {var title2 = "[OFFLINE]"; var player2 = "N/A"} 
+          else {var title2 = ""; var player2 = ser2.players}
            
           let ser3 = json.find(o => o.ip === "scpmemers.xyz" && o.port === '7779')
-          if(!ser3) {var title3 = ""; var player3 = ser3.players} 
-          else {var title3 = "[OFFLINE]"; var player3 = "N/A"}
+          if(!ser3) {var title3 = "[OFFLINE]"; var player3 = "N/A"} 
+          else {var title3 = ""; var player3 = ser3.players}
 		
 	  let serverstatus1 = new Discord.RichEmbed()
 	    .setTitle("Shiba community #1 "+title1)
