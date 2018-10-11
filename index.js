@@ -62,16 +62,16 @@ if (command === "ping") {
         } else {
           
           let ser1 = json.find(o => o.ip === "149.202.87.101" && o.port === '7790')
-          if(!ser1) {var title1 = "[OFFLINE]"; var player1 = "N/A"; var color1 = "#1de535"} 
-          else {var title1 = ""; var player1 = ser1.players; var color1 = "#e51c1c"}
+          if(!ser1) {var title1 = "[OFFLINE]"; var player1 = "N/A"; var color1 = "#e51c1c"} 
+          else {var title1 = ""; var player1 = ser1.players; var color1 = "#1de535"}
            
           let ser2 = json.find(o => o.ip === "149.202.87.101" && o.port === '7778')
-          if(!ser2) {var title2 = "[OFFLINE]"; var player2 = "N/A"; var color2 = "#1de535"} 
-          else {var title2 = ""; var player2 = ser2.players; var color2 = "#e51c1c"}
+          if(!ser2) {var title2 = "[OFFLINE]"; var player2 = "N/A"; var color2 = "#e51c1c"} 
+          else {var title2 = ""; var player2 = ser2.players; var color2 = "#1de535"}
            
           let ser3 = json.find(o => o.ip === "149.202.87.101" && o.port === '7779')
-          if(!ser3) {var title3 = "[OFFLINE]"; var player3 = "N/A"; var color3 = "#1de535"} 
-          else {var title3 = ""; var player3 = ser3.players; var color3 = "#e51c1c"}
+          if(!ser3) {var title3 = "[OFFLINE]"; var player3 = "N/A"; var color3 = "#e51c1c"} 
+          else {var title3 = ""; var player3 = ser3.players; var color3 = "#1de535"}
 		
 	  let serverstatus1 = new Discord.RichEmbed()
 	    .setTitle("Shiba community #1 "+title1)
