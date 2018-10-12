@@ -34,8 +34,21 @@ if (command === "ping") {
 }
 if (command === "set") {
   if (!message.member.permissions.has('ADMINISTRATOR')) {message.channel.send("Admin only!");return}
-  if (args.length != 2) {message.channel.send("``[]set [1,2, or 3] [ip] [port]``");return}
-  
+  if (args.length != 3) {message.channel.send("``[]set [1,2, or 3] [ip] [port]``");return}
+  switch (args[0]) {
+    case 1:
+      client.sets.set("server1", [ args[1] , args[2] ])
+      break;
+    case 2:
+      client.sets.set("server2", [ args[1] , args[2] ])
+      break;
+    case 3:
+      client.sets.set("server3", [ args[1] , args[2] ]) 
+      break;
+    default:
+      message.channel.send("``[]set [1,2, or 3] [ip] [port]``")
+      return;
+  }
 }
   if (command === "ss"){
   request('https://api.scpslgame.com/lobbylist.php?format=json', function(err, resp, html) {
