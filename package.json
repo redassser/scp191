@@ -18,6 +18,8 @@
     "express": "^4.16.3",
     "jquery": "^1.7.4",
     "cheerio": "^0.22.0",
+    "enmap": "^3.1.0",
+    "enmap-mongo": "^2.0.1",
     "request": "^2.87.0"
   }
 }
