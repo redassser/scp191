@@ -42,11 +42,11 @@ if (command === "set") {
       break;
     case "2":
       client.sets.set("server2", [ args[1] , args[2] ])
-      message.channel.send("Server 1 has been changed")
+      message.channel.send("Server 2 has been changed")
       break;
     case "3":
       client.sets.set("server3", [ args[1] , args[2] ]) 
-      message.channel.send("Server 1 has been changed")
+      message.channel.send("Server 3 has been changed")
       break;
     default:
       message.channel.send("``[]set [1,2, or 3] [ip] [port]``")
@@ -85,16 +85,16 @@ if (command === "set") {
 	  let serverstatus2 = new Discord.RichEmbed()
 	    .setTitle("Shiba community #2 "+title2)
 	    .setAuthor("SCP Secret Laboratory","https://upload.wikimedia.org/wikipedia/commons/e/ec/SCP_Foundation_%28emblem%29.svg")
-	    .addField("IP:","scpmemers.xyz",true)
-	    .addField("PORT:","7778",true)
+	    .addField("IP:",serv2[0],true)
+	    .addField("PORT:",serv2[1],true)
 	    .addField("PLAYERS:",player2,true)
 	    .setColor(color2)
           message.channel.send(serverstatus2)
 	  let serverstatus3 = new Discord.RichEmbed()
 	    .setTitle("Shiba community #3 "+title3)
 	    .setAuthor("SCP Secret Laboratory","https://upload.wikimedia.org/wikipedia/commons/e/ec/SCP_Foundation_%28emblem%29.svg")
-	    .addField("IP:","scpmemers.xyz",true)
-	    .addField("PORT:","7779",true)
+	    .addField("IP:",serv3[0],true)
+	    .addField("PORT:",serv3[1],true)
 	    .addField("PLAYERS:",player3,true)
 	    .setColor(color3)
           message.channel.send(serverstatus3)
