@@ -6,8 +6,8 @@ var prefix = "[]";
 var request = require('request');
 var cheerio = require('cheerio');
 client.sets = new Enmap({ provider: new EnmapMongo({
-  name: `commands`,
-  dbName: `shibaset`,
+  name: `shibaset`,
+  dbName: `commands`,
   url: process.env.MONGO
 })
 })
