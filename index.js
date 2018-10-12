@@ -5,7 +5,7 @@ var client = new Discord.Client();
 var prefix = "[]";
 var request = require('request');
 var cheerio = require('cheerio');
-set.commands = new Enmap({ provider: new EnmapMongo({
+client.sets = new Enmap({ provider: new EnmapMongo({
   name: `commands`,
   dbName: `shibaset`,
   url: process.env.MONGO
