@@ -38,12 +38,15 @@ if (command === "set") {
   switch (args[0].trim()) {
     case "1":
       client.sets.set("server1", [ args[1] , args[2] ])
+		  message.channel.send("Server 1 has been changed")
       break;
     case "2":
       client.sets.set("server2", [ args[1] , args[2] ])
+      message.channel.send("Server 1 has been changed")
       break;
     case "3":
       client.sets.set("server3", [ args[1] , args[2] ]) 
+      message.channel.send("Server 1 has been changed")
       break;
     default:
       message.channel.send("``[]set [1,2, or 3] [ip] [port]``")
@@ -58,15 +61,15 @@ if (command === "set") {
           console.log("Someone help me!");
         } else {
           
-          let ser1 = json.find(o => o.ip === "149.202.87.101" && o.port === '7790')
+          let ser1 = json.find(o => o.ip === client.sets.get("server1")[0] && o.port === client.sets.get("server1")[1])
           if(!ser1) {var title1 = "[OFFLINE]"; var player1 = "N/A"; var color1 = "#e51c1c"} 
           else {var title1 = ""; var player1 = ser1.players; var color1 = "#1de535"}
            
-          let ser2 = json.find(o => o.ip === "149.202.87.101" && o.port === '7778')
+          let ser2 = json.find(o => o.ip === client.sets.get("server2")[0] && o.port === client.sets.get("server2")[1])
           if(!ser2) {var title2 = "[OFFLINE]"; var player2 = "N/A"; var color2 = "#e51c1c"} 
           else {var title2 = ""; var player2 = ser2.players; var color2 = "#1de535"}
            
-          let ser3 = json.find(o => o.ip === "149.202.87.101" && o.port === '7779')
+          let ser3 = json.find(o => o.ip === client.sets.get("server3")[0] && o.port === client.sets.get("server3")[1])
           if(!ser3) {var title3 = "[OFFLINE]"; var player3 = "N/A"; var color3 = "#e51c1c"} 
           else {var title3 = ""; var player3 = ser3.players; var color3 = "#1de535"}
 		
