@@ -60,44 +60,22 @@ if (command === "set") {
         if ("error" in json) {
           console.log("Someone help me!");
         } else {
-          var serv1 = client.sets.get("server1"); var serv2 = client.sets.get("server2"); var serv3 = client.sets.get("server3")
-          
+          var serv1 = client.sets.get("server1"); 
+		
           let ser1 = json.find(o => o.ip === serv1[0] && o.port === serv1[1])
           if(!ser1) {var title1 = "[OFFLINE]"; var player1 = "N/A"; var color1 = "#e51c1c"} 
           else {var title1 = ""; var player1 = ser1.players; var color1 = "#1de535"}
            
-          let ser2 = json.find(o => o.ip === serv2[0] && o.port === serv2[1])
-          if(!ser2) {var title2 = "[OFFLINE]"; var player2 = "N/A"; var color2 = "#e51c1c"} 
-          else {var title2 = ""; var player2 = ser2.players; var color2 = "#1de535"}
-           
-          let ser3 = json.find(o => o.ip === serv3[0] && o.port === serv3[1])
-          if(!ser3) {var title3 = "[OFFLINE]"; var player3 = "N/A"; var color3 = "#e51c1c"} 
-          else {var title3 = ""; var player3 = ser3.players; var color3 = "#1de535"}
-		
 	  let serverstatus1 = new Discord.RichEmbed()
-	    .setTitle("Shiba community #1 "+title1)
+	    .setTitle("JackInTheBox community "+title1)
 	    .setAuthor("SCP Secret Laboratory","https://upload.wikimedia.org/wikipedia/commons/e/ec/SCP_Foundation_%28emblem%29.svg")
 	    .addField("IP:",serv1[0],true)
 	    .addField("PORT:",serv1[1],true)
 	    .addField("PLAYERS:",player1,true)
 	    .setColor(color1)
           message.channel.send(serverstatus1)
-	  let serverstatus2 = new Discord.RichEmbed()
-	    .setTitle("Shiba community #2 "+title2)
-	    .setAuthor("SCP Secret Laboratory","https://upload.wikimedia.org/wikipedia/commons/e/ec/SCP_Foundation_%28emblem%29.svg")
-	    .addField("IP:",serv2[0],true)
-	    .addField("PORT:",serv2[1],true)
-	    .addField("PLAYERS:",player2,true)
-	    .setColor(color2)
-          message.channel.send(serverstatus2)
-	  let serverstatus3 = new Discord.RichEmbed()
-	    .setTitle("Shiba community #3 "+title3)
-	    .setAuthor("SCP Secret Laboratory","https://upload.wikimedia.org/wikipedia/commons/e/ec/SCP_Foundation_%28emblem%29.svg")
-	    .addField("IP:",serv3[0],true)
-	    .addField("PORT:",serv3[1],true)
-	    .addField("PLAYERS:",player3,true)
-	    .setColor(color3)
-          message.channel.send(serverstatus3)
+	
+          
         } 
       }  
     });
