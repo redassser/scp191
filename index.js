@@ -81,4 +81,4 @@ if (command === "set") {
     });
   }
 });
-client.login(process.env.BOT_TOKEN).catch(console error);
+client.login(process.env.BOT_TOKEN).catch(console.error);
