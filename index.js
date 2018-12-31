@@ -35,9 +35,8 @@ if (command === "ping") {
 if (command === "set") {
   if (!message.member.permissions.has('ADMINISTRATOR')) {message.channel.send("Admin only!");return}
   if (args.length != 2) {message.channel.send("``[]set [ip] [port]``");return}
-      client.sets.set("server1", [ args[0] , args[1] ])
-			message.channel.send("Server has been changed")
-  }
+  client.sets.set("server1", [ args[0] , args[1] ])
+  message.channel.send("Server has been changed")
 }
   if (command === "ss"){
   request('https://api.scpslgame.com/lobbylist.php?format=json', function(err, resp, html) {
